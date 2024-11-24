@@ -1,0 +1,67 @@
+%不需要区分奇偶页的请使用下面一行
+\documentclass[a4paper,AutoFakeBold,oneside,12pt]{book}
+%需要区分奇偶页的（即每一章第一页一定在奇数页上）请使用下面一行
+%\documentclass[a4paper,AutoFakeBold,openright,12pt]{book}
+\usepackage{BUPTBachelorThesis}
+
+% 定义某些在论文中重复使用的字段
+\def\thesistitle{一种本科毕业设计论文模板的设计与实现}
+\def\thesisenglishtitle{Design and Implementation of a Bachelor Thesis Template}
+
+\begin{document}
+
+% 封面
+\blankmatter
+\includepdf[pages=-]{docs/cover.pdf}
+
+% 诚信声明
+\blankmatter
+\includepdf[pages=-]{docs/statement.pdf}
+
+% 摘要
+\subfile{chapters/abstract}
+
+% 目录
+\fancypagestyle{plain}{\pagestyle{frontmatter}}
+\frontmatter
+\tableofcontents
+
+% 正文
+\newpage
+\mainmatter
+\fancypagestyle{plain}{\pagestyle{mainmatter}}
+
+\subfile{chapters/chapter1}
+
+% 参考文献
+\clearpage
+\phantomsection\addcontentsline{toc}{chapter}{参考文献}
+\bibliographystyle{BUPTBachelor}
+\songti\zihao{5}{\bibliography{ref}}
+
+% 致谢
+\clearpage
+\chapter*{致\qquad{}谢}
+\phantomsection\addcontentsline{toc}{chapter}{致\qquad{}谢}
+
+Thanks to everyone who helps me when finishing my bachelor thesis.
+
+% 附录
+\setcounter{figure}{0} 
+\renewcommand{\thefigure}{~附-\arabic{figure}~}
+\setcounter{equation}{0} 
+\renewcommand{\theequation}{~附-\arabic{equation}~}
+\setcounter{table}{0} 
+\renewcommand{\thetable}{~附-\arabic{table}~}
+\setcounter{lstlisting}{0} 
+\makeatletter
+  \renewcommand \thelstlisting
+       {附-\@arabic\c@lstlisting}
+\makeatother
+
+\chapter*{附\qquad{}录}
+\phantomsection\addcontentsline{toc}{chapter}{附\qquad{}录}
+
+\subfile{appendix/appendix1}
+
+\end{document}

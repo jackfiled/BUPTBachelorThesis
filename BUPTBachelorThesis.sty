@@ -1,0 +1,258 @@
+\usepackage{ctex} % invole CJKfntef
+\usepackage{xeCJKfntef}
+\usepackage{setspace} % spacing
+\usepackage{xcolor}   % color
+\usepackage{xltxtra}  % print a XeLaTeX
+\usepackage{setspace}
+\usepackage{subfiles}
+
+% Font family
+\setmainfont[Mapping=tex-text]{Times New Roman}
+
+% Normal font size is XiaosiHao
+\renewcommand{\normalsize}{\zihao{-4}\songti\normalfont}
+
+% Word spacing
+% Usage: \ziju{spacing} spacing can be 1em, 10pt, etc.
+%\newcommand{\ziju}[1]{\renewcommand{\CJKglue}{\hskip #1}}
+
+%%%%%% Page Style %%%%%%
+
+% Margin
+\usepackage[left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm,headheight=1.5cm,headsep=0.6cm,footskip=0.5cm]{geometry}
+
+
+% Header and footer
+\usepackage{fancyhdr}
+
+% 正文的页眉页脚格式
+\fancypagestyle{mainmatter}{
+  \fancyhf{} % clear all header and footer fields
+  \fancyhead[C]{\songti\zihao{-5}{北京邮电大学本科毕业设计(论文)}}
+  \fancyfoot[C]{\songti\zihao{-5}{\thepage}}
+  \renewcommand{\headrulewidth}{0.8pt}
+}
+
+% 目录页的页眉页脚格式
+\fancypagestyle{frontmatter}{
+  \fancyhf{} % clear all header and footer fields
+  \fancyhead[C]{\songti\zihao{-5}{北京邮电大学本科毕业设计(论文)}}
+  \fancyfoot[C]{\songti\zihao{-5}{\thepage}}
+  \renewcommand{\headrulewidth}{0.8pt}
+}
+
+% Bookmark  (Chinese bookmark supported)
+\usepackage{url}
+\def\UrlFont{}
+\usepackage[xetex, pdfstartview=FitH, 
+bookmarksnumbered=true, bookmarksopen=true, bookmarksdepth=2, colorlinks=true, 
+pdfborder=001, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}  % 修改bookmarksdepth指定书签层级
+% Deal with line breaking in url
+\makeatletter
+\def\UrlAlphabet{%
+    \do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j%
+    \do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t%
+    \do\u\do\v\do\w\do\x\do\y\do\z\do\A\do\B\do\C\do\D%
+    \do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N%
+    \do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X%
+    \do\Y\do\Z}
+\def\UrlDigits{\do\1\do\2\do\3\do\4\do\5\do\6\do\7\do\8\do\9\do\0}
+\g@addto@macro{\UrlBreaks}{\UrlOrds}
+\g@addto@macro{\UrlBreaks}{\UrlAlphabet}
+\g@addto@macro{\UrlBreaks}{\UrlDigits}
+\makeatother
+% Eliminate warnings about non-string commands not shown in PDF bookmarks. If you use more commands in section titles or chapter titles, you can add the commands here.
+\pdfstringdefDisableCommands{
+    \def \quad{}
+    \def \qquad{}
+}
+
+% Line spread
+\renewcommand{\baselinestretch}{1.30}
+% \setlength{\itemsep}{-5pt} % item seperate too wide
+
+% Footnote
+% Usage: \footnote{Your Text}
+\usepackage[perpage]{footmisc}
+% \usepackage{footnpag} % footnote per page
+% \usepackage{footnote}
+% \let\ftnt=\footnote
+% \renewcommand{\footnote}[1]{\ftnt{\footnotefont{#1}}}
+
+% No Number Footnote
+% Especially for stating which project the thesis is supported
+% Usage: \blfootnote{Your Text}
+\usepackage{lipsum}
+\newcommand\blfootnote[1]{
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}
+  \addtocounter{footnote}{-1}
+  \endgroup 
+}
+
+%%%%%% Detail style %%%%%%
+% Underline
+% Usage: \ul[length]{<text>}
+\makeatletter
+\newcommand\ul[2][4cm]{\hskip1pt\underline{\hb@xt@ #1{\hss#2\hss}}\hskip3pt}
+\makeatother
+\def\ULthickness{1.1pt}%
+
+% Content style
+\setcounter{secnumdepth}{3} % let subsubsection have number
+\setcounter{tocdepth}{3} % let subsubsection appear in CONTENTS
+\usepackage{titletoc}
+\newif{\ifpagenumber}
+\pagenumbertrue
+\renewcommand\contentsname{\centerline{\toctitlefont{目\qquad{}录}}}
+\titlecontents{chapter}[0em]{\tocchapterfont\vspace{0.4mm}} {%
+    \ifpagenumber \CTEXnumber{\CJKsection}{\thecontentslabel}{第\CJKsection{章}\quad{}} \fi}{%
+    } {%
+    \ifpagenumber \hspace{.5em}\titlerule*[6pt]{$\cdot$}\contentspage\fi}
+\titlecontents{section}[1em]{\tocsectionfont\vspace{0.4mm}}{%
+    \thecontentslabel\quad{}}{}{%
+    \ifpagenumber \hspace{.5em}\titlerule*[6pt]{$\cdot$}\contentspage\fi}%
+\titlecontents{subsection}[2em]{\tocsubsectionfont\vspace{0.4mm}}{%
+    \thecontentslabel\quad{}}{}{%
+    \ifpagenumber \hspace{.5em}\titlerule*[6pt]{$\cdot$}\contentspage\fi}%
+\titlecontents{subsubsection}[3em]{\tocsubsubsectionfont\vspace{0.4mm}}{%
+    \thecontentslabel\quad{}}{}{%
+    \ifpagenumber \hspace{.5em}\titlerule*[6pt]{$\cdot$}\contentspage\fi}%
+\makeatletter % Content Page style
+\renewcommand\frontmatter{%
+    \if@openright\cleardoublepage\else\clearpage\fi%
+    \@mainmatterfalse%
+    \pagenumbering{Roman}% Roman style page number
+    \pagestyle{frontmatter}
+    }
+\makeatother%
+
+\makeatletter % Content Page style
+\renewcommand\mainmatter{%
+    \if@openright\cleardoublepage\else\clearpage\fi%
+    \@mainmattertrue%
+    \pagenumbering{arabic}% Arabic style page number
+    \pagestyle{mainmatter}
+    }
+\makeatother%
+
+\makeatletter % Translation Page style
+\renewcommand\backmatter{%
+    \if@openright\cleardoublepage\else\clearpage\fi%
+    \@mainmatterfalse%
+    \pagestyle{empty}
+}
+\makeatother%
+
+% Text style
+\usepackage{titlesec}
+\titleformat{\chapter}[hang]{\heiti\zihao{3}\centering\textbf}{第\chinese{chapter}章}{1em}{}
+% 缩短章节标题的上边距
+\titlespacing{\chapter}{0pt}{-20pt}{12pt} 
+\titleformat{\section}{\heiti\zihao{4}\textbf}{\thesection}{1em}{}
+\titleformat{\subsection}{\heiti\zihao{-4}\textbf}{\qquad{}\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\heiti\zihao{-4}\textbf}{\qquad{}\thesubsubsection}{1em}{}
+
+% Reference style
+% \usepackage[numbers,sort&compress]{natbib}
+\usepackage[super,numbers,sort&compress]{natbib}
+%\usepackage[backend=biber,texencoding=utf8,bibencoding=utf8]{biblatex}
+\renewcommand\bibname{\centerline{\heiti\zihao{3}\textbf{参考文献}}}
+\setcitestyle{square}
+\setlength{\bibsep}{0.2em}
+
+% Appendix
+\usepackage{appendix}
+
+%% Some tweaking/features/styles
+
+% Figure & Table
+\usepackage{caption}
+\usepackage[position=t,singlelinecheck=off]{subfig}
+
+\renewcommand{\captionfont}{\kaishu\zihao{5}}
+\renewcommand{\captionlabelfont}{\kaishu\zihao{5}}
+\DeclareCaptionLabelSeparator{twospace}{ ~}
+\captionsetup{labelsep=twospace}  %去掉图1：后冒号
+\renewcommand{\tablename}{表}
+\renewcommand{\thetable}{~\arabic{chapter}-\arabic{table}~}
+\renewcommand{\figurename}{图}
+\renewcommand{\thefigure}{~\arabic{chapter}-\arabic{figure}~}
+\renewcommand{\theequation}{\arabic{chapter}-\arabic{equation}~}
+% 外文文献中表、图、公式、代码编号重置
+\newcommand{\newtranschapter}{\thispagestyle{empty}\addtocounter{chapter}{1}\setcounter{table}{0}\setcounter{equation}{0}\setcounter{figure}{0}\setcounter{lstlisting}{0}}
+
+% equation tweaking
+\usepackage{amssymb}
+\usepackage{bm} % 加粗使用
+\usepackage{amsmath,delarray,bm,mathtools}
+\newtagform{newtag}[]{式（}{）} %定义公式编号样式
+\usetagform{newtag}
+
+% \usepackage{amsthm}
+\newtheorem{definition}{定义}[chapter]
+\newtheorem{theorem}{定理}[chapter]
+\newtheorem{axiom}{公理}[chapter]
+\newtheorem{lemma}{引理}[chapter]
+\newtheorem{proposition}{命题}[chapter] 
+\newtheorem{corollary}{推论}[chapter]
+
+% Algorithm
+\usepackage{algorithm}  
+\usepackage{algorithmicx}  
+\usepackage{algpseudocode}
+
+% Code 
+\usepackage{listings}
+\usepackage{xcolor}
+\lstset{
+    basicstyle=\ttfamily\wuhao, %五号等宽字体
+    extendedchars=true,
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!30!black}, 
+    showspaces=false,          % 显示空格
+    showstringspaces=true,    % 字符串中显示空格
+    showtabs=false,            % 显示 TAB
+    tabsize=2,                 % TAB 被当作两个空格
+    captionpos=t,              % 标题位置
+    breaklines=true,           % 自动断行
+    breakatwhitespace=true,   
+    basewidth={0.5em,0.35em},
+    frame=single,              %单线边框，注释掉则无边框
+    numbers=left,               %行号位于左侧
+    numberbychapter=true,
+%    xleftmargin=.5em,
+%    xrightmargin=.5em,
+%    aboveskip=1ex,
+%    columns=flexible,        % 如果不指定等宽字体用这个
+%    mathescape,
+    escapeinside={\%*}{*)}
+}
+
+\renewcommand{\lstlistingname}{\kaishu{代码}}
+\makeatletter
+\AtBeginDocument{%
+  \renewcommand \thelstlisting
+       {\ifnum \c@chapter>\z@ \thechapter-\fi \@arabic\c@lstlisting}%
+}
+\makeatother
+
+
+% insert PDF
+\usepackage[final]{pdfpages}
+
+% insert blank page
+\makeatletter
+\newcommand\blankmatter{%
+    \if@openright\cleardoublepage\else\clearpage\fi%
+    \@mainmatterfalse%
+    \pagestyle{empty}}%
+\makeatother%
+
+% List environment config
+\usepackage[inline]{enumitem}
+% Uncomment the two lines below if you want an list environment to share the same indent
+% with a paragraph and no extra blank before, in or after the list.
+%\setlist[itemize]{labelindent=\parindent,leftmargin=*,noitemsep,topsep=0pt}
+% Modify the label format by yourself if you do not like 1), 2), ... here.
+%\setlist[enumerate]{labelindent=\parindent,leftmargin=*,noitemsep,topsep=0pt,label={\arabic*)}} 

@@ -1,0 +1,79 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+% 中文摘要
+\begin{titlepage}
+
+    \pagestyle{empty}
+
+    \begin{spacing}{1.05}
+        \centering
+        \parbox[c]{.75\textwidth}{
+          \centering
+          \heiti\zihao{3}\textbf{\thesistitle}
+        }
+    \end{spacing}
+
+    \begin{spacing}{1.5}
+        \centering
+        \zihao{-3}\quad{} \\ 
+        \heiti\zihao{-3}\textbf{摘\quad{}要} \\ 
+    \end{spacing}
+    \zihao{-3}\quad{}
+
+    \normalsize
+
+    这里撰写摘要，大概500字左右。
+
+    \quad{}
+
+    \par\noindent\heiti\zihao{-4}\textbf{关键词}\quad{}
+    {
+      \songti\zihao{-4}
+      关键词一\quad
+      关键词二\quad
+    } 
+\end{titlepage}
+
+\thispagestyle{empty}
+
+% 英文摘要
+\begin{titlepage}
+
+    \pagestyle{empty}
+
+    \begin{spacing}{1.05}
+        \centering
+        % 如果你的标题太长，可能会换行；如果你对换行位置不满意，请调节下面第一个{}的参数
+        \parbox[c]{.75\textwidth}{
+          \centering
+          \zihao{3}\textbf{\thesisenglishtitle}
+        }
+    \end{spacing}
+
+    \begin{spacing}{1.5}
+        \centering
+        \zihao{-3}\quad \\ 
+        \zihao{-3}\textbf{ABSTRACT} \\ 
+    \end{spacing}
+    \zihao{-3}\quad
+
+    \normalsize
+
+    This is the english abstract, and the content should be the same as the chinese abstract.
+
+    \quad{}
+
+    \par\noindent\zihao{-4}\textbf{KEY WORDS}\quad{}%
+    {
+      \zihao{-4}
+      Keyword1\quad
+      Keyword2\quad
+    }
+
+\end{titlepage}
+
+\thispagestyle{empty}
+
+\end{document}
