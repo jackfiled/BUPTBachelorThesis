@@ -1,4 +1,4 @@
-\usepackage{ctex} % invole CJKfntef
+\usepackage[fontset=windows]{ctex} % invole CJKfntef
 \usepackage{xeCJKfntef}
 \usepackage{setspace} % spacing
 \usepackage{xcolor}   % color
@@ -104,21 +104,23 @@ pdfborder=001, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}  % �
 \usepackage{titletoc}
 \newif{\ifpagenumber}
 \pagenumbertrue
-\renewcommand\contentsname{\centerline{\toctitlefont{目\qquad{}录}}}
-\titlecontents{chapter}[0em]{\tocchapterfont\vspace{0.4mm}} {%
+\renewcommand\contentsname{\centerline{\heiti\zihao{3}\textbf{{目\qquad{}录}}}}
+\titlecontents{chapter}[0em]{\heiti\zihao{-4}\vspace{0.4mm}} {%
     \ifpagenumber \CTEXnumber{\CJKsection}{\thecontentslabel}{第\CJKsection{章}\quad{}} \fi}{%
     } {%
     \ifpagenumber \hspace{.5em}\titlerule*[6pt]{$\cdot$}\contentspage\fi}
-\titlecontents{section}[1em]{\tocsectionfont\vspace{0.4mm}}{%
+\titlecontents{section}[1em]{\songti\zihao{-4}\vspace{0.4mm}}{%
     \thecontentslabel\quad{}}{}{%
     \ifpagenumber \hspace{.5em}\titlerule*[6pt]{$\cdot$}\contentspage\fi}%
-\titlecontents{subsection}[2em]{\tocsubsectionfont\vspace{0.4mm}}{%
+\titlecontents{subsection}[2em]{\songti\zihao{-4}\vspace{0.4mm}}{%
     \thecontentslabel\quad{}}{}{%
     \ifpagenumber \hspace{.5em}\titlerule*[6pt]{$\cdot$}\contentspage\fi}%
-\titlecontents{subsubsection}[3em]{\tocsubsubsectionfont\vspace{0.4mm}}{%
+\titlecontents{subsubsection}[3em]{\songti\zihao{-4}\vspace{0.4mm}}{%
     \thecontentslabel\quad{}}{}{%
     \ifpagenumber \hspace{.5em}\titlerule*[6pt]{$\cdot$}\contentspage\fi}%
-\makeatletter % Content Page style
+    
+% Content Page style
+\makeatletter 
 \renewcommand\frontmatter{%
     \if@openright\cleardoublepage\else\clearpage\fi%
     \@mainmatterfalse%
@@ -127,7 +129,7 @@ pdfborder=001, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}  % �
     }
 \makeatother%
 
-\makeatletter % Content Page style
+\makeatletter
 \renewcommand\mainmatter{%
     \if@openright\cleardoublepage\else\clearpage\fi%
     \@mainmattertrue%
@@ -146,12 +148,12 @@ pdfborder=001, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}  % �
 
 % Text style
 \usepackage{titlesec}
-\titleformat{\chapter}[hang]{\heiti\zihao{3}\centering\textbf}{第\chinese{chapter}章}{1em}{}
+\titleformat{\chapter}[hang]{\heiti\zihao{3}\centering\bfseries}{第\chinese{chapter}章}{1em}{}
 % 缩短章节标题的上边距
 \titlespacing{\chapter}{0pt}{-20pt}{12pt} 
-\titleformat{\section}{\heiti\zihao{4}\textbf}{\thesection}{1em}{}
-\titleformat{\subsection}{\heiti\zihao{-4}\textbf}{\qquad{}\thesubsection}{1em}{}
-\titleformat{\subsubsection}{\heiti\zihao{-4}\textbf}{\qquad{}\thesubsubsection}{1em}{}
+\titleformat{\section}{\heiti\zihao{4}\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\heiti\zihao{-4}\bfseries}{\qquad{}\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\heiti\zihao{-4}\bfseries}{\qquad{}\thesubsubsection}{1em}{}
 
 % Reference style
 % \usepackage[numbers,sort&compress]{natbib}
@@ -164,9 +166,12 @@ pdfborder=001, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}  % �
 % Appendix
 \usepackage{appendix}
 
-%% Some tweaking/features/styles
-
 % Figure & Table
+\usepackage{graphicx}
+\usepackage{array,booktabs,multirow} % multirow, multicolumn and more professional format support
+\usepackage{tabularx} % deal with text wrapping in tables
+\usepackage{longtable}
+
 \usepackage{caption}
 \usepackage[position=t,singlelinecheck=off]{subfig}
 
