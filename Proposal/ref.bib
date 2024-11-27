@@ -1,0 +1,206 @@
+@article{liu_heterogeneous_2014,
+	title = {异构并行编程模型研究与进展},
+	volume = {25},
+	issn = {1000-9825},
+	doi = {10.13328/j.cnki.jos.004608},
+	abstract = {近年来,异构系统硬件飞速发展.为了解决相应的编程和执行效率问题,异构并行编程模型已被广泛使用和研究.从异构并行编程接口与编译/运行时支持系统两个角度总结了异构并行编程模型最新的研究成果,它们为异构架构和上层应用带来的技术挑战提供了相应的解决方案.最后,结合目前的研究现状以及异构系统的发展,提出了异构并行编程模型的未来方向.},
+	language = {en-US},
+	number = {7},
+	journal = {软件学报},
+	author = {刘, 颖 and 吕, 方 and 王, 蕾 and 陈, 莉 and 崔, 慧敏 and 冯, 晓兵},
+	year = {2014},
+	keywords = {GPU, 异构并行编程模型, 异构系统, 编程接口, 编译, 运行时系统},
+	pages = {1459--1475},
+}
+
+@www{ai-and-compute,
+    author = "OpenAI",
+    title = "AI and compute",
+    howpublished = "Website",
+    year = {2018},
+    note = {\url{https://openai.com/index/ai-and-compute/}}
+}
+
+
+@inproceedings{auerbach_compiler_2012,
+	address = {San Francisco California},
+	title = {A compiler and runtime for heterogeneous computing},
+	isbn = {978-1-4503-1199-1},
+	doi = {10.1145/2228360.2228411},
+	abstract = {Heterogeneous systems show a lot of promise for extracting highperformance by combining the beneﬁts of conventional architectures with specialized accelerators in the form of graphics processors (GPUs) and reconﬁgurable hardware (FPGAs). Extracting this performance often entails programming in disparate languages and models, making it hard for a programmer to work equally well on all aspects of an application. Further, relatively little attention is paid to co-execution—the problem of orchestrating program execution using multiple distinct computational elements that work seamlessly together.},
+	urldate = {2024-07-16},
+	booktitle = {Proceedings of the 49th {Annual} {Design} {Automation} {Conference}},
+	publisher = {ACM},
+	author = {Auerbach, Joshua and Bacon, David F. and Burcea, Ioana and Cheng, Perry and Fink, Stephen J. and Rabbah, Rodric and Shukla, Sunil},
+	month = jun,
+	year = {2012},
+	pages = {271--276},
+}
+
+
+@article{perez_user-driven_2023,
+	title = {User-driven {Online} {Kernel} {Fusion} for {SYCL}},
+	volume = {20},
+	issn = {1544-3566, 1544-3973},
+	url = {https://dl.acm.org/doi/10.1145/3571284},
+	doi = {10.1145/3571284},
+	abstract = {Heterogeneous programming models are becoming increasingly popular to support the ever-evolving hardware architectures, especially for new and emerging specialized accelerators optimizing specific tasks. While such programs provide performance portability of the existing applications across various heterogeneous architectures to some extent, short-running device kernels can affect an application performance due to overheads of data transfer, synchronization, and kernel launch. While in applications with one or two short-running kernels the overhead can be negligible, it can be noticeable when these short-running kernels dominate the overall number of kernels in an application, as it is the case in graph-based neural network models, where there are several small memory-bound nodes alongside few large compute-bound nodes.
+            
+              To reduce the overhead, combining several kernels into a single, more optimized kernel is an active area of research. However, this task can be time-consuming and error-prone given the huge set of potential combinations. This can push programmers to seek a tradeoff between (a) task-specific kernels with low overhead but hard to maintain and (b) smaller modular kernels with higher overhead but easier to maintain. While there are DSL-based approaches, such as those provided for machine learning frameworks, which offer the possibility of such a fusion, they are limited to a particular domain and exploit specific knowledge of that domain and, as a consequence, are hard to port elsewhere. This study explores the feasibility of a user-driven
+              kernel fusion
+              through an extension to the SYCL API to address the automation of kernel fusion. The proposed solution requires programmers to define the subgraph regions that are potentially suitable for fusion without any modification to the kernel code or the function signature. We evaluate the performance benefit of our approach on common neural networks and study the performance improvement in detail.},
+	number = {2},
+	urldate = {2024-10-29},
+	journal = {ACM Transactions on Architecture and Code Optimization},
+	author = {Pérez, Víctor and Sommer, Lukas and Lomüller, Victor and Narasimhan, Kumudha and Goli, Mehdi},
+	month = jun,
+	year = {2023},
+	pages = {1--25},
+}
+
+
+@inproceedings{tiotto_experiences_2024,
+	address = {Edinburgh, United Kingdom},
+	title = {Experiences {Building} an {MLIR}-{Based} {SYCL} {Compiler}},
+	copyright = {https://doi.org/10.15223/policy-029},
+	isbn = {9798350395099},
+	url = {https://ieeexplore.ieee.org/document/10444866/},
+	doi = {10.1109/CGO57630.2024.10444866},
+	abstract = {Similar to other programming models, compilers for SYCL, the open programming model for heterogeneous computing based on C++, would beneﬁt from access to higher-level intermediate representations. The loss of high-level structure and semantics caused by premature lowering to low-level intermediate representations and the inability to reason about host and device code simultaneously present major challenges for SYCL compilers. The MLIR compiler framework, through its dialect mechanism, allows to model domain-speciﬁc, high-level intermediate representations and provides the necessary facilities to address these challenges.},
+	urldate = {2024-10-29},
+	booktitle = {2024 {IEEE}/{ACM} {International} {Symposium} on {Code} {Generation} and {Optimization} ({CGO})},
+	publisher = {IEEE},
+	author = {Tiotto, Ettore and Pérez, Víctor and Tsang, Whitney and Sommer, Lukas and Oppermann, Julian and Lomüller, Victor and Goli, Mehdi and Brodman, James},
+	month = mar,
+	year = {2024},
+	pages = {399--410},
+}
+
+@article{a_lime_a_2010,
+    author = {Auerbach, Joshua and Bacon, David F. and Cheng, Perry and Rabbah, Rodric},
+    title = {Lime: a Java-compatible and synthesizable language for heterogeneous architectures},
+    year = {2010},
+    issue_date = {October 2010},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    volume = {45},
+    number = {10},
+    issn = {0362-1340},
+    url = {https://doi.org/10.1145/1932682.1869469},
+    doi = {10.1145/1932682.1869469},
+    abstract = {The halt in clock frequency scaling has forced architects and language designers to look elsewhere for continued improvements in performance. We believe that extracting maximum performance will require compilation to highly heterogeneous architectures that include reconfigurable hardware.We present a new language, Lime, which is designed to be executable across a broad range of architectures, from FPGAs to conventional CPUs. We present the language as a whole, focusing on its novel features for limiting side-effects and integration of the streaming paradigm into an object- oriented language. We conclude with some initial results demonstrating applications running either on a CPU or co- executing on a CPU and an FPGA.},
+    journal = {SIGPLAN Not.},
+    month = oct,
+    pages = {89–108},
+    numpages = {20},
+    keywords = {value type, streaming, reconfigurable architecture, object oriented, high level synthesis, functional programming, fpga}
+}
+
+
+@inproceedings{lattner_mlir_2021,
+	address = {Seoul, Korea (South)},
+	title = {{MLIR}: {Scaling} {Compiler} {Infrastructure} for {Domain} {Specific} {Computation}},
+	copyright = {https://ieeexplore.ieee.org/Xplorehelp/downloads/license-information/IEEE.html},
+	isbn = {978-1-72818-613-9},
+	shorttitle = {{MLIR}},
+	url = {https://ieeexplore.ieee.org/document/9370308/},
+	doi = {10.1109/CGO51591.2021.9370308},
+	abstract = {This work presents MLIR, a novel approach to building reusable and extensible compiler infrastructure. MLIR addresses software fragmentation, compilation for heterogeneous hardware, signiﬁcantly reducing the cost of building domain speciﬁc compilers, and connecting existing compilers together.},
+	urldate = {2024-11-05},
+	booktitle = {2021 {IEEE}/{ACM} {International} {Symposium} on {Code} {Generation} and {Optimization} ({CGO})},
+	publisher = {IEEE},
+	author = {Lattner, Chris and Amini, Mehdi and Bondhugula, Uday and Cohen, Albert and Davis, Andy and Pienaar, Jacques and Riddle, River and Shpeisman, Tatiana and Vasilache, Nicolas and Zinenko, Oleksandr},
+	month = feb,
+	year = {2021},
+	pages = {2--14},
+	file = {PDF:/home/ricardo/Zotero/storage/C26LLMFA/Lattner et al. - 2021 - MLIR Scaling Compiler Infrastructure for Domain Specific Computation.pdf:application/pdf},
+}
+
+
+@incollection{malawski_sycl-bench_2020,
+	address = {Cham},
+	title = {{SYCL}-{Bench}: {A} {Versatile} {Cross}-{Platform} {Benchmark} {Suite} for {Heterogeneous} {Computing}},
+	volume = {12247},
+	isbn = {978-3-030-57674-5 978-3-030-57675-2},
+	shorttitle = {{SYCL}-{Bench}},
+	url = {https://link.springer.com/10.1007/978-3-030-57675-2_39},
+	abstract = {The SYCL standard promises to enable high productivity in heterogeneous programming of a broad range of parallel devices, including multicore CPUs, GPUs, and FPGAs. Its modern and expressive C++ API design, as well as ﬂexible task graph execution model give rise to ample optimization opportunities at run-time, such as the overlapping of data transfers and kernel execution. However, it is not clear which of the existing SYCL implementations perform such scheduling optimizations, and to what extent. Furthermore, SYCL’s high level of abstraction may raise concerns about sacriﬁcing performance for ease of use. Benchmarks are required to accurately assess the performance behavior of high-level programming models such as SYCL. To this end, we present SYCLBench, a versatile benchmark suite for device characterization and runtime benchmarking, written in SYCL. We experimentally demonstrate the eﬀectiveness of SYCL-Bench by performing device characterization of the NVIDIA TITAN X GPU, and by evaluating the eﬃciency of the hipSYCL and ComputeCpp SYCL implementations.},
+	urldate = {2024-11-11},
+	booktitle = {Euro-{Par} 2020: {Parallel} {Processing}},
+	publisher = {Springer International Publishing},
+	author = {Lal, Sohan and Alpay, Aksel and Salzmann, Philip and Cosenza, Biagio and Hirsch, Alexander and Stawinoga, Nicolai and Thoman, Peter and Fahringer, Thomas and Heuveline, Vincent},
+	editor = {Malawski, Maciej and Rzadca, Krzysztof},
+	year = {2020},
+	doi = {10.1007/978-3-030-57675-2_39},
+	note = {Series Title: Lecture Notes in Computer Science},
+	pages = {629--644},
+	file = {PDF:/home/ricardo/Zotero/storage/7YQEHBJJ/Lal et al. - 2020 - SYCL-Bench A Versatile Cross-Platform Benchmark Suite for Heterogeneous Computing.pdf:application/pdf},
+}
+
+
+@article{wu_heterogeneous_2021,
+	title = {异构计算并行编程模型综述},
+	volume = {38},
+	issn = {2096-8655},
+	doi = {10.19328/j.cnki.2096-8655.2021.04.001},
+	abstract = {异构计算架构是目前高性能计算研究的重要领域。在异构计算架构中,不同种类的计算器件协同工作需要解决如任务调度、数据通信、存储、同步优化等问题。这些问题会对异构计算架构系统的运行性能、功耗、可靠性等指标产生重要影响。为解决异构系统的应用开发与系统优化问题,近年出现许多面向异构计算架构的并行编程模型。本文介绍异构并行编程模型的研究进展,针对异构并行计算需要解决的关键问题进行讨论,最后对异构体系架构的发展方向做出总结。},
+	language = {zh},
+	number = {4},
+	journal = {上海航天(中英文)},
+	author = {邬, 江兴 and 祁, 晓峰 and 高, 彦钊},
+	year = {2021},
+	keywords = {中间表示, 任务调度, 并行编程, 异构计算, 编程模型, 负载均衡},
+	pages = {1--11},
+}
+
+
+@article{ju_optimization_2015,
+	title = {异构众核系统及其编程模型与性能优化技术研究综述},
+	volume = {43},
+	issn = {0372-2112},
+	abstract = {异构众核系统已成为当前高性能计算领域重要的发展趋势.针对异构众核系统,从架构、编程、所支持的应用三方面分析对比当前不同异构系统的特点,揭示了异构系统的发展趋势及异构系统相对于传统多核并行系统的优势;然后从编程模型和性能优化方面分析了异构系统存在的问题和面临的挑战,以及国内外研究现状,结合当前研究存在的问题和难点,探讨了该领域进一步深入的研究方向;同时对两种典型的异构众核系统CPU+GPU和CPU+MIC进行不同应用类型的Benchmark测试,验证了两种异构系统不同的应用特点,为用户选择具体异构系统提供参考,在此基础上提出将两种众核处理器(GPU和MIC)结合在一个计算节点内构成新型混合异构系统;该新型混合异构系统可以利用两种众核处理器不同的处理优势,协同处理具有不同应用特点的复杂应用,同时分析了在该混合异构系统下必须要研究和解决的关键问题;最后对异构众核系统面临的挑战和进一步的研究方向进行了总结和展望.},
+	language = {zh},
+	number = {1},
+	journal = {电子学报},
+	author = {巨, 涛 and 朱, 正东 and 董, 小社},
+	year = {2015},
+	keywords = {异构众核系统, 异构计算, 性能优化, 编程模型, 高性能计算},
+	pages = {111--119},
+}
+
+
+@article{wu_uppa_2020,
+	title = {{UPPA}：面向异构众核系统的统一并行编程架构},
+	volume = {43},
+	issn = {0254-4164},
+	abstract = {主流异构并行编程方法如CUDA和OpenCL,其编程抽象层次低,编程接口靠近底层,无法为用户屏蔽底层硬件和运行时细节,导致编程逻辑复杂,编程困难易错.同时应用性能绑定于底层运行时环境,在硬件架构变化时需要根据硬件特征进行针对性改动和优化,无法保证上层应用的统一.为了简化异构并行编程,提高编程效率,实现上层应用的统一和跨平台,本文提出了一种面向异构众核系统的高层统一并行编程架构UPPA(Unified Parallel Programming Architecture).架构中首先提出了数据关联计算编程模型,实现了不同层级不同模式并行性的统一描述,简化了异构并行编程逻辑,提供了高层统一的并行编程抽象;继而设计了数据关联计算描述语言为用户提供简便易用的统一编程接口,通过高层语义结构保留了应用的并行特征,可以指导编译和运行时系统实现向不同硬件架构的自动映射,保证了上层应用的统一,并采用C语言兼容的语法提供针对高层语义结构的语言扩展,保证编程接口的易学易用;最后提供了基于OpenCL的编译和运行时原型系统,以OpenCL为中间语言实现了高层应用在不同异构系统上的执行,提供了良好的跨平台特性.我们使用数据关联计算描述语言对Parboil和Rodinia测试集中的多个测试用例进行了重构,并在NVIDIA GPU和Intel MIC两种异构平台上进行了验证测试.每个测试用例重构的代码量与测试集提供的串行代码相当,仅为测试集OpenCL代码的13\%～64\%,有效地降低了异构编程的工作量.在编译和运行时系统的支持下,重构代码无需改动就可以在两种平台上执行.相比于人工编写且经过优化的测试集OpenCL代码,重构代码在GPU和MIC两种平台下分别能够达到其性能的91\%～100\%和76\%～98\%,这表明了本文方法的有效性和编译与运行时系统的高效.},
+	language = {zh},
+	number = {6},
+	journal = {计算机学报},
+	author = {吴, 树森 and 董, 小社 and 王, 宇菲 and 王, 龙翔 and 朱, 正东},
+	year = {2020},
+	keywords = {OpenCL, 并行编程模型, 异构并行编程, 数据关联计算, 统一编程架构},
+	pages = {990--1009},
+}
+
+
+@article{cai_coala_2024,
+	title = {{COALA}: {A} {Compiler}-{Assisted} {Adaptive} {Library} {Routines} {Allocation} {Framework} for {Heterogeneous} {Systems}},
+	volume = {73},
+	copyright = {https://ieeexplore.ieee.org/Xplorehelp/downloads/license-information/IEEE.html},
+	issn = {0018-9340, 1557-9956, 2326-3814},
+	shorttitle = {{COALA}},
+	url = {https://ieeexplore.ieee.org/document/10495065/},
+	doi = {10.1109/TC.2024.3385269},
+	number = {7},
+	urldate = {2024-10-14},
+	journal = {IEEE Transactions on Computers},
+	author = {Cai, Qinyun and Tan, Guanghua and Yang, Wangdong and He, Xianhao and Yan, Yuwei and Li, Keqin and Li, Kenli},
+	month = jul,
+	year = {2024},
+	pages = {1724--1737},
+	file = {PDF:/home/ricardo/Zotero/storage/LVBVKYIS/Cai et al. - 2024 - COALA A Compiler-Assisted Adaptive Library Routines Allocation Framework for Heterogeneous Systems.pdf:application/pdf},
+}
+
+
+
