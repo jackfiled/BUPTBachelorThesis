@@ -33,7 +33,7 @@
 
 ### 开题报告
 
-使用`Proposal/main.tex`文件编译得到，由于原始模板的要求，本文件的主体内容均写在一个超长表格之中，因此**跨页的时候需要自行增加表格**，带来使用上的不变，请**酌情使用**。使用之前请阅读`tabularray`宏包的[官方文档](http://mirrors.ctan.org/macros/latex/contrib/tabularray/tabularray.pdf)和相关教程。
+使用`Proposal/main.tex`文件编译得到，由于原始模板的要求，本文件的主体内容均写在一个超长表格之中，因此**跨页的时候需要自行增加表格**，带来使用上的不便，请**酌情使用**。使用之前请阅读`tabularray`宏包的[官方文档](http://mirrors.ctan.org/macros/latex/contrib/tabularray/tabularray.pdf)和相关教程。
 
 由于在表格中的原因，主题内容中的每个单元格的`section`和`subsection`编号均需要手动使用`\setcounter`控制，请注意。
 
@@ -67,7 +67,7 @@ latexmk main.tex
 ### 为什么要使用LaTeX？
 
 1. 本仓库无意比较LaTeX和Word作为排版软件之间的差距~~叠甲，过~~。
-2. 使用LaTeX的原因是因为我只会用LaTeX。
+2. 我只会用LaTeX。
 3. Overleaf的多人协作功能非常好用。
 
 
