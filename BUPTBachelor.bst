@@ -2202,8 +2202,8 @@ FUNCTION {article}
   format.authors "author" output.warn
   format.book.title "title" output.warn
   format.journal.title "journal" output.warn
-  format.volume.number.year.month output
-  %format.year.volume.number output
+  %format.volume.number.year.month output
+  format.year.volume.number output
   format.pages "pages" output.warn
   format.reference.date output
   format.url output
