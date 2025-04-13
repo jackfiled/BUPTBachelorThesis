@@ -168,6 +168,14 @@ pdfborder=001, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}  % �
 % Appendix
 \usepackage{appendix}
 
+% 定义新指令 \appendixsection，接受标题和标签名两个参数
+\newcommand{\appendixsection}[2]{
+  \section*{#1} 
+  \phantomsection                
+  \hypertarget{#2}{}             
+  \addcontentsline{toc}{section}{#1}
+}
+
 % Figure & Table
 \usepackage{graphicx}
 \usepackage{array,booktabs,multirow} % multirow, multicolumn and more professional format support

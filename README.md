@@ -117,4 +117,14 @@ latexmk main.tex
 
 这是因为现在的`见`/`In`判断逻辑非常粗糙，是通过引用条目中是否存在`language`字段来判断的，所以文献文件`ref.bib`中的引用条目添加任意取值的`language`字段都会生成为`见`，因此引用英文文献就只能手动删除`language`字段以生成为`In`。
 
+### 如何引用附录
 
+在附录中使用指令`\appendixsection{}{}`创建标题，第一个参数是附录标题，第二个参数是引用label。在引用时使用指令`\hyperlink{}{}`，第一个参数是引用label，第二个参数是引用显示文本。举个栗子：
+
+```latex
+appendix1.tex中：
+\appendixsection{附录1\quad 缩略语表}{appendix:abbr}
+
+chapter2.txt中：
+评论量含义见\hyperlink{appendix:abbr}{附录1\quad 缩略语表}
+```
