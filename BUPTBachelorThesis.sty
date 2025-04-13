@@ -6,6 +6,7 @@
 \usepackage{setspace}
 \usepackage{subfiles}
 \usepackage{fontawesome5}
+\usepackage{float}
 
 % Font family
 \setmainfont[Mapping=tex-text]{Times New Roman}
@@ -174,14 +175,16 @@ pdfborder=001, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}  % �
 \usepackage{longtable}
 
 \usepackage{caption}
-\usepackage[position=t,singlelinecheck=off]{subfig}
+\usepackage[labelformat=simple]{subcaption}
 
 \renewcommand{\captionfont}{\kaishu\zihao{5}}
 \renewcommand{\captionlabelfont}{\kaishu\zihao{5}}
 \DeclareCaptionLabelSeparator{twospace}{ ~}
 \captionsetup{labelsep=twospace}  %去掉图1：后冒号
+\renewcommand{\thesubfigure}{(\alph{subfigure})}
 \renewcommand{\tablename}{表}
 \renewcommand{\thetable}{~\arabic{chapter}-\arabic{table}~}
+\renewcommand{\arraystretch}{1.5}
 \renewcommand{\figurename}{图}
 \renewcommand{\thefigure}{~\arabic{chapter}-\arabic{figure}~}
 \renewcommand{\theequation}{\arabic{chapter}-\arabic{equation}~}
@@ -217,7 +220,7 @@ pdfborder=001, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}  % �
     keywordstyle=\color{blue},
     commentstyle=\color{green!30!black}, 
     showspaces=false,          % 显示空格
-    showstringspaces=true,    % 字符串中显示空格
+    showstringspaces=false,    % 字符串中显示空格
     showtabs=false,            % 显示 TAB
     tabsize=2,                 % TAB 被当作两个空格
     captionpos=t,              % 标题位置
@@ -242,6 +245,41 @@ pdfborder=001, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}  % �
        {\ifnum \c@chapter>\z@ \thechapter-\fi \@arabic\c@lstlisting}%
 }
 \makeatother
+
+% C# 代码样式
+\lstdefinelanguage{CSharp}{
+    morekeywords={%
+        abstract, as, base, bool, break, byte, case, catch, char, checked, class, const, continue, decimal, default, %
+        delegate, do, double, else, enum, event, explicit, extern, false, finally, fixed, float, for, foreach, goto, %
+        if, implicit, in, int, interface, internal, is, lock, long, namespace, new, null, object, operator, out, %
+        override, params, private, protected, public, readonly, ref, return, sbyte, sealed, sizeof, stackalloc, string, %
+        struct, switch, this, throw, true, try, typeof, uint, ulong, unchecked, unsafe, ushort, using, virtual, void, volatile, while, %
+        async, await, get, set, add, remove, yield, yield break, yield return, %
+        dynamic, var, partial, virtual, override, base, typeof, sizeof, %
+        delegate, event, nameof, ref, in, out, params, this, base, new, %
+        where, from, group, join, let, orderby, select, into, orderby, descending, ascending, %
+        get, set, checked, unchecked, lock, fixed, sizeof, nameof, default, nameof, %
+        fixed, stackalloc, nameof, await, async, %
+        % 可能需要的上下文关键字
+        await, async, get, set, add, remove, yield, %
+        % 根据需求添加更多关键字
+    },
+    sensitive=false,      % 区分大小写（建议设为false，除非需要区分）
+    morecomment=[l]{//},  % 单行注释
+    morecomment=[s]{/*}{*/}, % 多行注释
+    morestring=[b]",      % 字符串用双引号包裹
+    literate=%            % 处理特殊符号（如显示为直角引号）
+        {`}{{\textquotesingle}}1
+        {~}{{\textasciitilde}}1,
+    showstringspaces=false% 隐藏字符串中的空格
+}
+
+\lstdefinestyle{csharp}{
+    language=CSharp,          % 使用定义的语言
+    stringstyle=\color{red},    % 字符串颜色
+    moredelim=[s][\color{magenta}]{<}{>}, % 泛型符号颜色（如<T>）
+    moredelim=*[s][\color{magenta}]{[}{]}, % 数组符号颜色（如[]）
+}
 
 
 % insert PDF

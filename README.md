@@ -74,6 +74,40 @@ latexmk main.tex
 
 从学校提供的官方Word模板中编辑好导出为PDF文件，因为这两个文件使用Latex排版非常复杂，排版的效果也不好。
 
+### 发现仓库更新了怎么办？
+
+为了方便模板的使用，我一般情况下只会更新`BUPTBachlorThesis.sty`文件和`BUPTBachlor.bst`文件，前者管理整个文档的样式，后者负责生成参考文件的引用格式，直接将这两个文件整体复制替换即可。
+
+### 如何排版多张子图？
+
+模板中提供了`subcaption`包作为子图排版的工具。一个示例如下：
+
+```latex
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{0.45\linewidth}
+        \includegraphics[width=0.9\linewidth]{assets/coala-example-cpu.png}
+        \subcaption{任务均运行在CPU上}
+        \label{fig:coala-example-cpu}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.45\linewidth}
+        \includegraphics[width=0.9\linewidth]{assets/coala-example-gpu.png}
+        \subcaption{任务均运行在GPU上}
+        \label{fig:coala-example-gpu}
+    \end{subfigure}
+    
+    \begin{subfigure}{0.9\linewidth}
+        \centering
+        \includegraphics[width=0.6\linewidth]{assets/coala-example-hybrid.png}
+        \subcaption{最优的调度方案}
+        \label{fig:coala-example-hybrid}
+    \end{subfigure}
+    \caption{任务调度对于任务完成时间的影响示意图}
+    \label{fig:coala-example}
+\end{figure}
+```
+
 ### ref.bib中的引用条目从哪里来的？
 
 1. 建议使用Zotero等文献管理工具自动生成。
@@ -81,6 +115,6 @@ latexmk main.tex
 
 ### 为什么参考文献中英文文献出现了中文的“见”字，而不是In？
 
-这是因为现在的`见`/`In`判断逻辑非常粗糙，是通过引用条目中是否存在`language`字段来判断的，所以中文文献添加任意取值的`language`字段都会生成为`见`，英文文献就只能手动删除`language`字段以生成为`In`。
+这是因为现在的`见`/`In`判断逻辑非常粗糙，是通过引用条目中是否存在`language`字段来判断的，所以文献文件`ref.bib`中的引用条目添加任意取值的`language`字段都会生成为`见`，因此引用英文文献就只能手动删除`language`字段以生成为`In`。
 
 
