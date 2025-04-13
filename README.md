@@ -125,6 +125,6 @@ latexmk main.tex
 appendix1.tex中：
 \appendixsection{附录1\quad 缩略语表}{appendix:abbr}
 
-chapter2.txt中：
+chapter2.tex中：
 评论量含义见\hyperlink{appendix:abbr}{附录1\quad 缩略语表}
 ```
