@@ -128,3 +128,7 @@ appendix1.tex中：
 chapter2.tex中：
 评论量含义见\hyperlink{appendix:abbr}{附录1\quad 缩略语表}
 ```
+
+### 如何统计字数
+
+见[issue#5](https://github.com/jackfiled/BUPTBachelorThesis/issues/5#issue-2992316613)
