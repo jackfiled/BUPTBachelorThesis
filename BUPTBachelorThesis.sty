@@ -307,6 +307,14 @@ pdfborder=001, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}  % ä¿
 
 % List environment config
 \usepackage[inline]{enumitem}
+\usepackage{pifont}
+
+% Reference: https://zhuanlan.zhihu.com/p/681663494
+\newcommand{\circlednumber}[1]{\ding{\numexpr171+#1\relax}}
+\setlist[enumerate,1]{label=(\arabic*)}
+\setlist[enumerate,2]{label=\circlednumber{\arabic*}}
+\setlist[enumerate,3]{label=\Alph*.}
+\setlist[enumerate,4]{label=\alph*.}
 % Uncomment the two lines below if you want an list environment to share the same indent
 % with a paragraph and no extra blank before, in or after the list.
 %\setlist[itemize]{labelindent=\parindent,leftmargin=*,noitemsep,topsep=0pt}
