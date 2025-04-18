@@ -181,6 +181,9 @@ pdfborder=001, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}  % �
 \usepackage{array,booktabs,multirow} % multirow, multicolumn and more professional format support
 \usepackage{tabularx} % deal with text wrapping in tables
 \usepackage{longtable}
+\usepackage{tabularray}
+\usepackage{tblr-extras}
+
 
 \usepackage{caption}
 \usepackage[labelformat=simple]{subcaption}
@@ -198,6 +201,21 @@ pdfborder=001, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}  % �
 \renewcommand{\theequation}{\arabic{chapter}-\arabic{equation}~}
 % 外文文献中表、图、公式、代码编号重置
 \newcommand{\newtranschapter}{\thispagestyle{empty}\addtocounter{chapter}{1}\setcounter{table}{0}\setcounter{equation}{0}\setcounter{figure}{0}\setcounter{lstlisting}{0}}
+
+% Tabularray 设置
+
+\SetTblrStyle{contfoot-text}{font=\kaishu\zihao{5}}
+\SetTblrStyle{caption-tag}{font=\kaishu\zihao{5}}
+\SetTblrStyle{caption-text}{font=\kaishu\zihao{5}}
+\DeclareTblrTemplate{contfoot-text}{default}{接下页}
+\DeclareTblrTemplate{caption-sep}{default}{ }
+\DeclareTblrTemplate{conthead-text}{default}{续表}
+\DefTblrTemplate{firsthead,middlehead,lasthead}{default}{}
+% \DefTblrTemplate{firstfoot,middlefoot}{default}{}  % <---
+\DefTblrTemplate{lastfoot}{default}%               % <--- 
+{
+  \UseTblrTemplate{caption}{default}
+}
 
 % equation tweaking
 \usepackage{amssymb}

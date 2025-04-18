@@ -132,3 +132,22 @@ chapter2.tex中：
 ### 如何统计字数
 
 见[issue#5](https://github.com/jackfiled/BUPTBachelorThesis/issues/5#issue-2992316613)
+
+### 需要排版跨页的表格使用什么环境？
+
+使用`tabularray`包提供的`longtblr`环境，一个例子如下：
+
+```latex
+\begin{longtblr}[
+    caption = {基本块构建器提供的接口},
+    label = {tab:basicblock-builder-interface}
+]{
+    colspec = {|p{4cm}|X[2,l]|X[1,l]|X[2,l]|},
+    rowhead = 1, % 重复表头
+}
+\hline
+\textbf{接口名称} & \textbf{参数} & \textbf{返回值} & \textbf{接口功能说明} \\
+\hline
+% 这里是表格内容
+\end{longtblr}
+```
