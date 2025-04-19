@@ -78,6 +78,12 @@ latexmk main.tex
 
 为了方便模板的使用，我一般情况下只会更新`BUPTBachlorThesis.sty`文件和`BUPTBachlor.bst`文件，前者管理整个文档的样式，后者负责生成参考文件的引用格式，直接将这两个文件整体复制替换即可。
 
+### 这个模板能通过论无忧的格式检测吗？
+
+能。有关问题和详情见[issue#8](https://github.com/jackfiled/BUPTBachelorThesis/issues/8)。
+
+![](./assets/lun51.png)
+
 ### 如何排版多张子图？
 
 模板中提供了`subcaption`包作为子图排版的工具。一个示例如下：

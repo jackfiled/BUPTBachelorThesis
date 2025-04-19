@@ -30,7 +30,7 @@
 % 正文的页眉页脚格式
 \fancypagestyle{mainmatter}{
   \fancyhf{} % clear all header and footer fields
-  \fancyhead[C]{\songti\zihao{-5}{北京邮电大学本科毕业设计(论文)}}
+  \fancyhead[C]{\songti\zihao{-5}{北京邮电大学本科毕业设计（论文）}}
   \fancyfoot[C]{\songti\zihao{-5}{\thepage}}
   \renewcommand{\headrulewidth}{0.8pt}
 }
@@ -38,9 +38,8 @@
 % 目录页的页眉页脚格式
 \fancypagestyle{frontmatter}{
   \fancyhf{} % clear all header and footer fields
-  \fancyhead[C]{\songti\zihao{-5}{北京邮电大学本科毕业设计(论文)}}
   \fancyfoot[C]{\songti\zihao{-5}{\thepage}}
-  \renewcommand{\headrulewidth}{0.8pt}
+  \renewcommand{\headrulewidth}{0pt}
 }
 
 % Bookmark  (Chinese bookmark supported)
@@ -209,10 +208,12 @@ pdfborder=001, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}  % �
 \SetTblrStyle{caption-text}{font=\kaishu\zihao{5}}
 \DeclareTblrTemplate{contfoot-text}{default}{接下页}
 \DeclareTblrTemplate{caption-sep}{default}{ }
-\DeclareTblrTemplate{conthead-text}{default}{续表}
-\DefTblrTemplate{firsthead,middlehead,lasthead}{default}{}
-% \DefTblrTemplate{firstfoot,middlefoot}{default}{}  % <---
-\DefTblrTemplate{lastfoot}{default}%               % <--- 
+% \DeclareTblrTemplate{conthead-text}{default}{续表}
+\DefTblrTemplate{firsthead}{default}
+{
+  \UseTblrTemplate{caption}{default}
+}
+\DefTblrTemplate{middlehead,lasthead}{default}
 {
   \UseTblrTemplate{caption}{default}
 }
