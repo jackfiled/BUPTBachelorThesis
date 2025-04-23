@@ -1,4 +1,4 @@
-\usepackage[fontset=windows]{ctex} % invole CJKfntef
+\usepackage[fontset=windows, heading=true]{ctex} % invole CJKfntef
 \usepackage{xeCJKfntef}
 \usepackage{setspace} % spacing
 \usepackage{xcolor}   % color
@@ -8,11 +8,41 @@
 \usepackage{fontawesome5}
 \usepackage{float}
 
+% Float Environment
+\renewcommand{\floatpagefraction}{0.75}
+
 % Font family
 \setmainfont[Mapping=tex-text]{Times New Roman}
 
-% Normal font size is XiaosiHao
+% 正文字体是宋体小四 1.5行距
 \renewcommand{\normalsize}{\zihao{-4}\songti\normalfont}
+
+% 处理中文排版的间距包
+\usepackage[
+    UseMSWordMultipleLineSpacing,
+    MSWordLineSpacingMultiple=1.5
+]{zhlineskip}
+
+% 处理标题的上下间距
+
+ \ctexset{%
+      % chapter = {
+      %   beforeskip = 27bp,
+      %   afterskip  = 27bp,
+      % },
+      section = {
+        beforeskip = 12bp,
+        afterskip  = 0bp,
+      },
+      subsection = {
+        beforeskip = 12bp,
+        afterskip  = 0bp,
+      },
+      subsubsection = {
+        beforeskip = 12bp,
+        afterskip  = 0bp,
+      },
+}%
 
 % Word spacing
 % Usage: \ziju{spacing} spacing can be 1em, 10pt, etc.
@@ -21,7 +51,7 @@
 %%%%%% Page Style %%%%%%
 
 % Margin
-\usepackage[left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm,headheight=1.5cm,headsep=0.6cm,footskip=0.5cm]{geometry}
+\usepackage[paper=a4paper,left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm,headheight=1.5cm,headsep=0.6cm,footskip=0.5cm]{geometry}
 
 
 % Header and footer
@@ -67,10 +97,6 @@ pdfborder=001, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}  % �
     \def \quad{}
     \def \qquad{}
 }
-
-% Line spread
-\renewcommand{\baselinestretch}{1.30}
-% \setlength{\itemsep}{-5pt} % item seperate too wide
 
 % Footnote
 % Usage: \footnote{Your Text}
@@ -189,7 +215,7 @@ pdfborder=001, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}  % �
 
 \renewcommand{\captionfont}{\kaishu\zihao{5}}
 \renewcommand{\captionlabelfont}{\kaishu\zihao{5}}
-\DeclareCaptionLabelSeparator{twospace}{ ~}
+\DeclareCaptionLabelSeparator{twospace}{~}
 \captionsetup{labelsep=twospace}  %去掉图1：后冒号
 \renewcommand{\thesubfigure}{(\alph{subfigure})}
 \renewcommand{\tablename}{表}
@@ -206,9 +232,10 @@ pdfborder=001, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}  % �
 \SetTblrStyle{contfoot-text}{font=\kaishu\zihao{5}}
 \SetTblrStyle{caption-tag}{font=\kaishu\zihao{5}}
 \SetTblrStyle{caption-text}{font=\kaishu\zihao{5}}
-\DeclareTblrTemplate{contfoot-text}{default}{接下页}
-\DeclareTblrTemplate{caption-sep}{default}{ }
+\DeclareTblrTemplate{contfoot-text}{default}{}
+\DeclareTblrTemplate{caption-sep}{default}{}
 % \DeclareTblrTemplate{conthead-text}{default}{续表}
+% https://tex.stackexchange.com/questions/115195/table-captions-continued
 \DefTblrTemplate{firsthead}{default}
 {
   \UseTblrTemplate{caption}{default}
@@ -336,6 +363,5 @@ pdfborder=001, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}  % �
 \setlist[enumerate,4]{label=\alph*.}
 % Uncomment the two lines below if you want an list environment to share the same indent
 % with a paragraph and no extra blank before, in or after the list.
-%\setlist[itemize]{labelindent=\parindent,leftmargin=*,noitemsep,topsep=0pt}
-% Modify the label format by yourself if you do not like 1), 2), ... here.
-%\setlist[enumerate]{labelindent=\parindent,leftmargin=*,noitemsep,topsep=0pt,label={\arabic*)}} 
+\setlist[itemize]{labelindent=\parindent,leftmargin=*,noitemsep,topsep=0pt}
+\setlist[enumerate]{labelindent=\parindent,leftmargin=*,noitemsep,topsep=0pt} 
