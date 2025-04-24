@@ -23,27 +23,6 @@
     MSWordLineSpacingMultiple=1.5
 ]{zhlineskip}
 
-% 处理标题的上下间距
-
- \ctexset{%
-      % chapter = {
-      %   beforeskip = 27bp,
-      %   afterskip  = 27bp,
-      % },
-      % section = {
-      %   beforeskip = 12bp,
-      %   afterskip  = 0bp,
-      % },
-      % subsection = {
-      %   beforeskip = 12bp,
-      %   afterskip  = 0bp,
-      % },
-      % subsubsection = {
-      %   beforeskip = 12bp,
-      %   afterskip  = 0bp,
-      % },
-}%
-
 % Word spacing
 % Usage: \ziju{spacing} spacing can be 1em, 10pt, etc.
 %\newcommand{\ziju}[1]{\renewcommand{\CJKglue}{\hskip #1}}
@@ -177,10 +156,13 @@ pdfborder=001, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}  % �
 \usepackage{titlesec}
 \titleformat{\chapter}[hang]{\heiti\zihao{3}\centering\bfseries}{第\chinese{chapter}章}{1em}{}
 % 缩短章节标题的上边距
-\titlespacing{\chapter}{0pt}{-20pt}{12pt} 
+\titlespacing{\chapter}{0pt}{-20pt}{0pt} 
 \titleformat{\section}{\heiti\zihao{4}\bfseries}{\thesection}{1em}{}
+\titlespacing{\section}{0pt}{-1pt}{-1pt}
 \titleformat{\subsection}{\heiti\zihao{-4}\bfseries}{\qquad{}\thesubsection}{1em}{}
+\titlespacing{\subsection}{0pt}{-3pt}{-3pt}
 \titleformat{\subsubsection}{\heiti\zihao{-4}\bfseries}{\qquad{}\thesubsubsection}{1em}{}
+\titlespacing{\subsubsection}{0pt}{-3pt}{-3pt}
 
 % Reference style
 % \usepackage[numbers,sort&compress]{natbib}
@@ -207,8 +189,6 @@ pdfborder=001, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}  % �
 \usepackage{tabularx} % deal with text wrapping in tables
 \usepackage{longtable}
 \usepackage{tabularray}
-\usepackage{tblr-extras}
-
 
 \usepackage{caption}
 \usepackage[labelformat=simple]{subcaption}
