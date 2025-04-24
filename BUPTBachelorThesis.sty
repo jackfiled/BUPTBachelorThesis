@@ -214,15 +214,19 @@ pdfborder=001, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}  % �
 \SetTblrStyle{caption-text}{font=\kaishu\zihao{5}}
 \DeclareTblrTemplate{contfoot-text}{default}{}
 \DeclareTblrTemplate{caption-sep}{default}{}
-% \DeclareTblrTemplate{conthead-text}{default}{续表}
-% https://tex.stackexchange.com/questions/115195/table-captions-continued
-\DefTblrTemplate{firsthead}{default}
+\DeclareTblrTemplate{firsthead}{default}
 {
-  \UseTblrTemplate{caption}{default}
+    \UseTblrTemplate{caption}{default}
 }
-\DefTblrTemplate{middlehead,lasthead}{default}
-{
-  \UseTblrTemplate{caption}{default}
+\DeclareTblrTemplate{caption-tag}{myconcaptag}{续表\thetable}
+\DeclareTblrTemplate{capcont}{default}{
+    \centering
+    \makebox [\hsize] [c] { 
+        \UseTblrTemplate{caption-tag}{myconcaptag}
+        \UseTblrTemplate{caption-sep}{default}
+        \UseTblrTemplate{caption-text}{default}
+    }
+    \par    
 }
 
 % equation tweaking
@@ -343,5 +347,5 @@ pdfborder=001, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}  % �
 \setlist[enumerate,4]{label=\alph*.}
 % Uncomment the two lines below if you want an list environment to share the same indent
 % with a paragraph and no extra blank before, in or after the list.
-\setlist[itemize]{labelindent=\parindent,leftmargin=*,noitemsep,topsep=0pt}
-\setlist[enumerate]{labelindent=\parindent,leftmargin=*,noitemsep,topsep=0pt} 
+\setlist[itemize]{leftmargin=0pt,itemindent=3.5\ccwd,noitemsep,topsep=0pt}
+\setlist[enumerate]{leftmargin=0pt,itemindent=3.5\ccwd,noitemsep,topsep=0pt}
