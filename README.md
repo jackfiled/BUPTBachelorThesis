@@ -157,3 +157,7 @@ chapter2.tex中：
 % 这里是表格内容
 \end{longtblr}
 ```
+
+### 如何导入外文资料
+
+见[issue#12](https://github.com/jackfiled/BUPTBachelorThesis/issues/12)
